@@ -1,22 +1,22 @@
 class Group {
   constructor() {
-    this.group = [];
+    this.set = [];
   }
 
   add(value) {
     if (!this.has(value)) {
-      this.group.push(value);
+      this.set.push(value);
     }
   }
 
   delete(value) {
     if (this.has(value)) {
-      this.group = this.group.filter(v => v !== value);
+      this.set = this.set.filter(v => v !== value);
     }
   }
 
   has(value) {
-    return this.group.includes(value);
+    return this.set.includes(value);
   }
 
   static from(range) {

@@ -13,14 +13,14 @@ function runRobot(state, robot, memory) {
 }
 
 function compareRobots(robot1, memory1, robot2, memory2) {
-  const turns1 = [], turns2 = [];
+  let total1 = 0, total2 = 0;
   for (let i = 0; i < 100; i++) {
     const state = village.VillageState.random();
-    turns1.push(runRobot(state, robot1, memory1));
-    turns2.push(runRobot(state, robot2, memory2));
+    total1 += runRobot(state, robot1, memory1);
+    total2 += runRobot(state, robot2, memory2);
   }
-  const average1 = turns1.reduce((a, b) => a + b) / turns1.length;
-  const average2 = turns2.reduce((a, b) => a + b) / turns2.length;
+  const average1 = total1 / 100;
+  const average2 = total2 / 100;
   console.log(`Robot 1 used an average of ${average1} steps`);
   console.log(`Robot 2 used an average of ${average2} steps`);
   if (average1 <= average2) {

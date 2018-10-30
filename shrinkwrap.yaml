@@ -1,6 +1,7 @@
 dependencies:
   babel-eslint: 10.0.1
   eslint: 5.7.0
+  prompt-sync: 4.1.6
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -775,6 +776,10 @@ packages:
       node: '>=0.4.0'
     resolution:
       integrity: sha512-OE+a6vzqazc+K6LxJrX5UPyKFvGnL5CYmq2jFGNIBWHpc4QyE49/YOumcrpQFJpfejmvRtbJzgO1zPmMCqlbBg==
+  /prompt-sync/4.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-dYjDha0af2vefm6soqnPnFEz2tAzwH/kb+pPoaCohRoPUxFXj+mymkOFgxX7Ylv59TdEr7OzktEizdK7MIMvIw==
   /punycode/2.1.1:
     dev: false
     engines:
@@ -996,3 +1001,4 @@ shrinkwrapVersion: 3
 specifiers:
   babel-eslint: ^10.0.1
   eslint: ^5.7.0
+  prompt-sync: ^4.1.6

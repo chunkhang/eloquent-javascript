@@ -60,9 +60,31 @@ function goalOrientedRobot({place, parcels}, route) {
   };
 }
 
+function smartRobot({place, parcels}, route) {
+  if (route.length === 0) {
+    const routes = parcels.map(parcel => {
+      let r;
+      if (parcel.place !== place) {
+        r = findRoute(roads.roadGraph, place, parcel.place);
+      } else {
+        r = findRoute(roads.roadGraph, place, parcel.address);
+      }
+      return r;
+    });
+    route = routes.reduce((shortest, r) => {
+      return r.length < shortest.length ? r : shortest;
+    });
+  }
+  return {
+    direction: route[0],
+    memory: route.slice(1)
+  };
+}
+
 module.exports = {
   mailRoute,
   randomRobot,
   routeRobot,
-  goalOrientedRobot
+  goalOrientedRobot,
+  smartRobot
 };
